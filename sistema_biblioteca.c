@@ -8,14 +8,17 @@
 // - Liberação de memoria com free
 // ====================================================================================================================================
 
+// A função mais comum da stdio.h é permitir que o programa exiba informações para o usuário ou receba dados digitados. printf, scanf entre outros
 #include <stdio.h>
+// Ela permite que o programa solicite memória ao sistema operacional durante a execução. malloc, calloc, realloc, free entre outras
 #include <stdlib.h>
+// É a ferramenta padrão da linguagem C para a manipulação de cadeias de caracteres (strings) e blocos de memória.
 #include <string.h>
 
 // Constantes globais
 #define MAX_LIVROS 50
-#define MAX_EMPRESTIMOS 100 // Definimos uma capacidade para emprestimos.
 #define TAM_STRING 100
+#define MAX_EMPRESTIMOS 100 // Definimos uma capacidade para emprestimos.
 
 // --- Definição das Estruturas ---
 // Struct Livro agora tem um campo 'disponivel' para controlar o status.
@@ -135,7 +138,6 @@ int main()
             }
             else
             {
-                // Corrigido: i < totalLivros e ponto em vez de vírgula
                 for (int i = 0; i < totalLivros; i++)
                 {
                     printf("--------------------------------------------------------\n");
@@ -186,7 +188,7 @@ int main()
 
                     int indice = numLivro - 1; // Converte para o indice do array (0 a N-1)
 
-                    // Validaão da escolha do usuario.
+                    // Validação da escolha do usuario.
                     if (indice >= 0 && indice < totalLivros && biblioteca[indice].disponivel)
                     {
                         printf("Digite o nome do usuario que esta pegando o livro: ");
